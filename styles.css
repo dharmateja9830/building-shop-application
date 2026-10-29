@@ -1,0 +1,102 @@
+/* --- General Body and Font Styles --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 2rem;
+}
+
+/* --- Header and Title Animation --- */
+header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    animation: color-change 4s infinite alternate;
+
+}
+
+.highlight {
+    color: #3498db;
+    /* 2. Apply the 'color-change' animation */
+    animation: color-change 4s infinite alternate;
+    font-family: lato;
+}
+
+/* 1. Define the color-change animation */
+@keyframes color-change {
+    from {
+        color: #3498db;
+    }
+
+    to {
+        color: #9b59b6;
+    }
+}
+
+/* --- Card Container --- */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Allows cards to wrap on smaller screens */
+    margin-top: 3rem;
+}
+
+/* --- Card Hover and Transition --- */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 20px;
+
+    /* 1. THIS IS THE TRANSITION */
+    /* It tells the browser to smoothly animate any changes to 'transform' and 'box-shadow' over 0.3 seconds. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 2. THIS IS THE HOVER EFFECT */
+/* When you hover over a card, these styles will be applied. */
+.card:hover {
+    transform: translateY(-10px);
+    /* Lifts the card up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Makes the shadow bigger */
+}
+
+.card h2 {
+    color: #3498db;
+}
+
+/* --- Button Animation --- */
+.cta-button {
+    margin-top: 3rem;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* 2. Apply the 'pulse' animation */
+    animation: pulse 2s infinite;
+}
+
+/* 1. Define the pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
